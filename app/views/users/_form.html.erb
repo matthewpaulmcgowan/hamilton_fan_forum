@@ -1,0 +1,23 @@
+  <br />
+  <%="How many times have you seen Hamilton: "%>
+  <%= f.number_field :viewed_hamilton %><br />
+  <br />
+  <%="How many times have you listened to the Hamilton soundtrack: "%>
+  <%= f.number_field :listened_to_soundtrack %><br />
+  <br />
+  <%="Who is your favorite actor in Hamilton: "%>
+  <%= f.text_field :favorite_actor %><br />
+  <br />
+  <%="What is your favorite song in Hamilton: "%>
+  <%= f.text_field :favorite_song %><br />
+  <br />
+  <%="On a numbered scale, how much do you believe Lin-Manuel Miranda is a National Treasure: "%>
+  <%= f.number_field :lmm_national_treasure %><br />
+  <br />
+  <%="Is your favorite Daveed Diggs character Lafayette or Thomas Jefferson? "%>
+  <%= f.text_field :favorite_Daveed_Diggs_character %><br />
+  <br />
+  <%="Does Alexander Hamilton or Aaron Burr have better songs? "%>
+  <%= f.text_field :ham_or_burr_have_better_songs %><br />
+  <br />
+  <%= f.submit %>

@@ -1,0 +1,7 @@
+<h2>View All User's Posts</h2>
+  <%@users.each do |user|%>
+    <h4>Fan: <%=user.username%></h4>
+    <h4>Post: <%=user.authored_posts.last.content%></h4>
+    <h4><%=link_to("View all #{user.username}'s Posts",user_path(user))%></h4>
+    <br />
+  <%end%>

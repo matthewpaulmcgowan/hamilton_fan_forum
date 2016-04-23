@@ -1,0 +1,5 @@
+<h1>Please enter your information to create an account</h1>
+<%= form_for @user do |f| %>
+<%= render partial: "sessions/form", locals: {f: f} %>
+<%= render partial: "form", locals: {f: f} %>
+<% end %>

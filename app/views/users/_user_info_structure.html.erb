@@ -1,0 +1,34 @@
+<%if !@user.favorite_song.nil? && @user.favorite_song != ""%>
+  <%="Favorite Hamilton Song: #{@user.favorite_song}" %><br />
+  <br />
+<%end%>
+
+<%if !@user.favorite_actor.nil? && @user.favorite_actor != ""%>
+  <%="Favorite Hamilton Actor: #{@user.favorite_actor}" %><br />
+  <br />
+<%end%>
+
+<%if !@user.favorite_Daveed_Diggs_character.nil? && @user.favorite_Daveed_Diggs_character != ""%>
+  <%="Favorite Daveed Diggs Character: #{@user.favorite_Daveed_Diggs_character}" %><br />
+  <br />
+<%end%>
+
+<%if !@user.ham_or_burr_have_better_songs.nil? && @user.ham_or_burr_have_better_songs != ""%>
+  <%="Do Alexander Hamilton or Aaron Burr have better songs?: #{@user.ham_or_burr_have_better_songs}" %><br />
+  <br />
+<%end%>
+
+<%if @user.lmm_national_treasure > 0%>
+  <%="To What Degree is Lin-Manuel Miranda a National Treasure(on numbered scale): #{@user.lmm_national_treasure}" %><br />
+  <br />
+<%end%>
+
+<%if @user.viewed_hamilton%>
+  <%="Times Seen Hamilton: #{@user.viewed_hamilton}" %><br />
+  <br />
+<%end%>
+
+<%if @user.listened_to_soundtrack > 0%>
+  <%="Times Listened to The Hamilton Soundtrack: #{@user.listened_to_soundtrack}" %><br />
+  <br />
+<%end%>

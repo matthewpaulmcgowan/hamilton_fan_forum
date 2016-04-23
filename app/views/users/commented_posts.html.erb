@@ -1,0 +1,8 @@
+<h2><%="The Posts #{@user.username} has commented on"%></h2>
+<%@user.comment_posts.each do |post|%>
+  <h3>Post: <%="#{post.content}, Author: #{post.author.username}"%></h3>
+  <%post.comments.each do |comment|%>
+    <h4>Comment: <%="#{comment.content}, Commenter: #{comment.user.username}"%></h4>
+  <%end%>
+  <br />
+<%end%>
