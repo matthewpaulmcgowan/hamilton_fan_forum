@@ -1,10 +1,8 @@
 <h2><%=@user.username%>'s Post</h2>
 <h3>Post: <%=@post.content%></h3>
-<h4><%=link_to("Delete This Post",user_post_path(@user,@post), method: :delete) if current_users_page(@user) %></h4>
-<%@post.comments.each do |comment|%>
-  <h4><%="Comment: #{comment.content}, Commenter: #{comment.user.username}"%></h4>
-  <h5><%=link_to("Delete This Comment",user_post_comment_path(@user,@post,comment), method: :delete) if comment_author(comment) %></h5>
-<%end%>
+<h4><%=link_to("Edit This Post",edit_user_post_path(@user,@post)) if current_users_page(@user)%>
+    <%=link_to("Delete This Post",user_post_path(@user,@post), method: :delete) if current_users_page(@user) %></h4>
+<%= render partial: "/comments/all_comments_display", locals: {user: @user,post: @post} %>
 <br />
 <h2> Enter A Comment Below </h2>
 

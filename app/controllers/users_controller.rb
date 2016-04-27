@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :require_login, :only=>[:new,:create]
+   before_action :require_login, only: [:show, :update, :destroy, :edit, :index, :wall_of_fame, :commented_posts]
    
    def new 
      @user = User.new
@@ -35,6 +35,19 @@ class UsersController < ApplicationController
    def index
      @user = current_user
      @users = User.all_with_posts
+   end
+   
+   def destroy 
+     @user = User.find_by(id: params[:id]) 
+     if @user.id == current_user.id
+       session.destroy
+       @user.delete
+       flash[:notice] = "Successfully logged out"
+       redirect_to root_path 
+     else
+       flash[:alert] = "Can only delete your own profile"
+       redirect_to user_path(@user)
+     end   
    end
    
    def wall_of_fame

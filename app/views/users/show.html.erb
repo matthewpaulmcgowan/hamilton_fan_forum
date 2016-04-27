@@ -3,16 +3,7 @@
 <%= render partial: "user_info_structure", locals: {user: @user} %>
 <br /> 
 <h3><%="#{@user.username}'s Posts"%></h3>
-<%if !@user.authored_posts.nil?%>
-  <%@user.authored_posts.each do |user_post|%>
-    <h4><%="Post: #{user_post.content}"%></h4>
-    <h4><%=link_to("Delete This Post",user_post_path(@user,user_post), method: :delete) if current_users_page(@user) %></h4>
-    <%if !user_post.comments.first.nil?%>
-      <h4><%="Comment: #{user_post.comments.first.content}, Commenter: #{user_post.comments.first.user.username}"%></h4>
-    <%end%>
-    <h4><%=link_to("View this post and all comments",user_post_path(@user,user_post))%></h4>
-    <br />
-  <%end%>
-<%end%>
+ <%= render partial: "/posts/post_with_one_comment_display", locals: {user: @user} %>
 <br />
 <h4><%=link_to("All Posts You Have Commented On",commented_posts_path) if current_users_page(@user) %></h4>
+<h4><%=link_to("Delete This Account",user_path(@user), method: :delete,data: { confirm: "Are you sure?" }) if current_users_page(@user) %></h4>

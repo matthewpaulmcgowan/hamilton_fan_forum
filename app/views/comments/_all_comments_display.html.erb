@@ -1,0 +1,4 @@
+<%@post.comments.each do |comment|%>
+  <h4><%="Comment: #{comment.content}, Commenter: #{comment.user.username}"%></h4>
+  <h5><%=link_to("Delete This Comment",user_post_comment_path(@user,@post,comment), method: :delete) if comment_author(comment) %></h5>
+<%end%>

@@ -1,8 +1,10 @@
 class HomeController < ApplicationController 
-   skip_before_filter :require_login
+   skip_before_action :require_login
    
    def home 
-       #binding.pry
+     if user_logged_in?
+       redirect_to user_path(current_user)
+     end
    end
     
 end

@@ -1,0 +1,9 @@
+<br />
+<%="Enter the first Comment of Your New Post If You Would LIke"%>
+<br />
+<%= f.fields_for :comments, @post.comments.build do |comment| %>
+  <%= comment.hidden_field :user_id, :value => @user.id %>
+  <%= comment.label :content %>
+  <%= comment.text_field :content %><br />   
+<%end%>
+<br />

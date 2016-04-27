@@ -1,2 +1,6 @@
 <%="Please Update Your Post"%>
-<%=render 'form'%>
+<%= form_for [@user, @post] do |f| %>
+  <br />
+  <%= render partial: "form", locals: {user: @user,f: f,post: @post} %>
+  <%= f.submit %>
+<% end %>

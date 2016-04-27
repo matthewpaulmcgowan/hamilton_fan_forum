@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    skip_before_filter :require_login
+    before_action :require_login
     
     def show
       @post = Post.find_by(id: params[:id])
@@ -34,10 +34,6 @@ class PostsController < ApplicationController
       end
     end
     
-    def index
-      @user = current_user 
-    end
-    
     def edit
       @user = current_user 
       @post = Post.find_by(id: params[:id])
@@ -45,11 +41,11 @@ class PostsController < ApplicationController
     
     def update
       @post = Post.find_by(id: params[:id])
-      @user = current_user 
-      if @post.update(post_params)
+      @user = current_user
+      if @post.update(post_params) && @user.id == @post.author.id   
         redirect_to user_post_path(@user,@post)
       else 
-        render 'update' 
+        render 'edit' 
       end
     end
     

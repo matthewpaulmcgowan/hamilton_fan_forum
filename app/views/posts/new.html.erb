@@ -1,2 +1,6 @@
 <h2>Please Enter Your New Post</h2>
-<%= render 'form' %>
+<%= form_for [@user, @post] do |f| %>
+  <%= render partial: "form", locals: {user: @user,f: f,post: @post} %>
+  <%= render partial: "/comments/add_first_comment_form", locals: {user: @user,f: f,post: @post} %>
+  <%= f.submit %>
+<% end %>
