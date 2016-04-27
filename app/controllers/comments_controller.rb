@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-    before_action :require_login
     
     def create
       @user = current_user
