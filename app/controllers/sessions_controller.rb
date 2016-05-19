@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
        session[:user_id] = user.id 
        redirect_to user_path(user)
      else
-      binding.pry
        @user = User.find_by(username: user_username)
        if @user && @user.authenticate(user_password)
          session[:user_id] = @user.id 
