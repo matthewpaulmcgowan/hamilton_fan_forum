@@ -1,5 +1,5 @@
 <br />
-<%="Enter the first Comment of Your New Post If You Would LIke"%>
+<%="Enter the first Comment of Your New Post If You Would Like"%>
 <br />
 <%= f.fields_for :comments, @post.comments.build do |comment| %>
   <%= comment.hidden_field :user_id, :value => @user.id %>

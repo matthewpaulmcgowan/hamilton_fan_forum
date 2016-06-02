@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
     has_many :comment_posts,source: :post, through: :comments
     has_secure_password
     validates_presence_of :username 
-    #validates_uniqueness_of :username
+    validates_uniqueness_of :username
     
     scope :viewed_hamilton, -> { where("viewed_hamilton > ?", 0) }
     
