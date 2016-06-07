@@ -1,5 +1,14 @@
 class PostsController < ApplicationController
-
+    
+    def index 
+      @user = User.find_by(id: params[:user_id]) 
+      if @user
+        @posts = @user.authored_posts
+      else
+        @posts = Post.all
+      end
+    end
+    
     def show
       @post = Post.find_by(id: params[:id])
       @user =  @post.author  

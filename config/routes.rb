@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   
   resources :users do 
-   resources :posts, only: [:create,:destroy,:edit,:update,:show,:new] do 
+   resources :posts, only: [:create,:destroy,:edit,:update,:show,:new, :index] do 
      resources :comments, only: [:create,:destroy]
     end
   end
   
+  resources :posts, only: [:index]
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"
   delete "/log-out" => "sessions#destroy"
