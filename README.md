@@ -1,20 +1,20 @@
 #Hamilton Fan Forum
 
-The Hamilton Fan Forum application is designed as a place for fans of Hamilton, An American Musical, to come together. Fans have the option to create an account including information 
-about their favorite parts of hamilton, create new posts, and to comment on other user's posts. The application keeps track of the posts the user has written as well as the posts the 
+The Hamilton Fan Forum application is designed as a place for fans of Hamilton, An American Musical, to come together. Fans have the option to create an account including information
+about their favorite parts of hamilton, create new posts, and to comment on other user's posts. The application keeps track of the posts the user has written as well as the posts the
 user has commented on.
 
 
 ##Installation
 
-Clone this repo to your desktop and run `bundle install` to install all dependencies. The twitter validation via Omniauth will not function unless you create a twitter application 
-and insert the application secret and key in the initializers/omniatuh.rb file. Visit [omniauth github](https://github.com/arunagw/omniauth-twitter) for more information
+Clone this repo to your desktop and run `bundle install` to install all dependencies. The twitter validation via Omniauth will not function unless you create a twitter application
+and insert the application secret and key in the config/initializers/omniatuh.rb file. Visit [omniauth github](https://github.com/arunagw/omniauth-twitter) for more information
 
 
 ##Contributor's Guide
 
-Fork the repo on github and make changes on your desktop. If desired, write a test to ensure the change works as expected. Make sure the application is still functioning and the new feature is working 
-or the bug is fixed. Submit a pull request with a detailed commit message. Relax. 
+Fork the repo on github and make changes on your desktop. If desired, write a test to ensure the change works as expected. Make sure the application is still functioning and the new feature is working
+or the bug is fixed. Submit a pull request with a detailed commit message. Relax.
 
 
 ##License
