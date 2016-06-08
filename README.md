@@ -8,7 +8,8 @@ user has commented on.
 ##Installation
 
 Clone this repo to your desktop and run `bundle install` to install all dependencies. The twitter validation via Omniauth will not function unless you create a twitter application
-and insert the application secret and key in the config/initializers/omniatuh.rb file. Visit [omniauth github](https://github.com/arunagw/omniauth-twitter) for more information
+and insert the application secret and key in the config/initializers/omniatuh.rb file. Visit [omniauth github](https://github.com/arunagw/omniauth-twitter) for more information.
+Run `rake db:migrate` to initialize your database. 
 
 
 ##Contributor's Guide
