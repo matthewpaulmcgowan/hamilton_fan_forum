@@ -1,3 +1,3 @@
 class DuelSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :competitor, :user_id, :outcome
 end
