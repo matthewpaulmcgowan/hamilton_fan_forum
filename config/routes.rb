@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  
-  resources :users do 
-   resources :posts, only: [:create,:destroy,:edit,:update,:show,:new, :index] do 
+
+  resources :users do
+  resources :duels, only: [:index, :new, :show]
+   resources :posts, only: [:create,:destroy,:edit,:update,:show,:new, :index] do
      resources :comments, only: [:create,:destroy]
     end
   end
-  
+
   resources :posts, only: [:index]
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"
@@ -14,9 +15,9 @@ Rails.application.routes.draw do
   root "home#home"
   get '/wall_of_fame' => 'users#wall_of_fame'
   get '/commented_posts' => 'users#commented_posts'
-  
-  
-  
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

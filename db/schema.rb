@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422001120) do
+ActiveRecord::Schema.define(version: 20160608233749) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20160422001120) do
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "duels", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "outcome"
+    t.text     "competitor"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -32,8 +40,8 @@ ActiveRecord::Schema.define(version: 20160422001120) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "email"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.integer  "viewed_hamilton",                 default: 0
     t.integer  "listened_to_soundtrack",          default: 0
     t.string   "favorite_actor"
@@ -41,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160422001120) do
     t.integer  "lmm_national_treasure",           default: 0
     t.string   "favorite_Daveed_Diggs_character"
     t.string   "ham_or_burr_have_better_songs"
+    t.integer  "dueling_ability",                 default: 45
   end
 
 end
