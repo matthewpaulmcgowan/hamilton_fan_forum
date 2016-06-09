@@ -4,17 +4,18 @@
   <title>HamiltonFanForum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render 'layouts/header' %>
   <% if !flash.empty? %>
-    <div id="flash"> 
-      <% flash.keys.each do |k| %> 
+    <div id="flash">
+      <% flash.keys.each do |k| %>
         <div class="<%= k %>">
           <p><%= flash[k] %></p>
-        </div>  
-      <% end %>   
+        </div>
+      <% end %>
     </div>
   <%end%>
 <%= yield %>
