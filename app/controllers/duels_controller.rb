@@ -10,7 +10,15 @@ class DuelsController < ApplicationController
      @duels = @user.duels
    end
 
+   def new
+     @user = User.find(params[:user_id])
+   end
+
    def create
+     @user = User.find(params[:user_id])
+     @duel = @user.duels.build.(competitor: params[:competitor])
+     @duel.determine_outcome
+
      #need to user params to create an outcome and save the opponnett, then create a new duel
      #create an out come using if/else statement
    end

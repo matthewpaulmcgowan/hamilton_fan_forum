@@ -4,10 +4,6 @@ class PostsController < ApplicationController
       @user = User.find_by(id: params[:user_id])
       if @user
         @posts = @user.authored_posts
-        respond_to do |f|
-          f.html { render :show }
-          f.json { render json: @posts }
-        end
       else
         @posts = Post.all
       end

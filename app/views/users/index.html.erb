@@ -1,9 +1,9 @@
 <h2>View All User's Posts</h2>
 <%@users.each do |user|%>
   <h4>Fan: <%=user.username%></h4>
-  <div id="indexContent">
+  <div id=<%="indexContent#{user.id}"%>>
     <h4>Post: <%=user.authored_posts.last.content%></h4>
   </div>
-  <h4 id="indexNext"><%=link_to("View all #{user.username}'s Posts")%></h4>
+  <h4 class="indexNext"><%=link_to("View all #{user.username}'s Posts",user_path(user))%></h4>
   <br />
 <%end%>

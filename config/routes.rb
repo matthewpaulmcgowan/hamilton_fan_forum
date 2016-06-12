@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users do
-  resources :duels, only: [:index, :new, :show]
+  resources :duels, only: [:create,:new,:show,:index]
    resources :posts, only: [:create,:destroy,:edit,:update,:show,:new, :index] do
      resources :comments, only: [:create,:destroy]
     end
