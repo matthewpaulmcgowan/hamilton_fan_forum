@@ -1,13 +1,9 @@
 class Duel < ActiveRecord::Base
   belongs_to :user
 
-  def self.duelers
-    {alexander_hamilton: 40,aaron_burr: 60,button_gwinnett: 25}
-  end
-
   def determine_outcome
     @user = User.find(self.user_id)
-    if self.competitor === "alexander_hamilton"
+    if self.competitor === "Alexander Hamilton"
       if @user.dueling_ability > 40
         self.outcome = "Win"
       elsif @user.dueling_ability < 20
@@ -15,6 +11,23 @@ class Duel < ActiveRecord::Base
       else
         self.outcome = "Draw"
       end
-    elsif self.competitor == "aaron_burr"    
+    elsif self.competitor === "Aaron Burr"
+      if @user.dueling_ability > 70
+        self.outcome = "Win"
+      elsif @user.dueling_ability < 50
+        self.outcome = "Lose"
+      else
+        self.outcome = "Draw"
+      end
+    else
+      if @user.dueling_ability > 25
+        self.outcome = "Win"
+      elsif @user.dueling_ability < 5
+        self.outcome = "Lose"
+      else
+        self.outcome = "Draw"
+      end
+    end
   end
+
 end
