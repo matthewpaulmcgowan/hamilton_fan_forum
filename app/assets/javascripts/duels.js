@@ -9,6 +9,9 @@ Duel.prototype.formatDuel = function(outcome,competitor){
   return "Outcome: " + outcome + "<br>" + "Competitor: " + competitor + "<br>";
 }
 
+var formatCompetitor = function(competitor){
+  return "#" + competitor.split(" ").join("").toLowerCase()
+};
 
 var duelSelector = function(){
   $(".duelSelector").click(function(event){
@@ -23,8 +26,8 @@ var duelSelector = function(){
        success: function(response) {
          var duel = new Duel(response["outcome"],response["competitor"],response["id"],response["user_id"]);
          var formattedDuel = duel.formatDuel(duel.outcome,duel.competitor);
-         debugger;
-         $("#" + duelCompetitor).html(formattedDuel);
+         var formattedCompetitor = formatCompetitor(duelCompetitor);
+         $(formattedCompetitor).html(formattedDuel);
        }
      });
   });
