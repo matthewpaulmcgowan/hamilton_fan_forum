@@ -3,21 +3,21 @@ var Duel = function(outcome,competitor,id,userID){
   this.competitor = competitor;
   this.id = id;
   this.userID = userID;
-}
+};
 
 Duel.prototype.formatDuel = function(outcome,competitor){
   return "Outcome: " + outcome + "<br>" + "Competitor: " + competitor + "<br>";
-}
+};
 
 var formatCompetitor = function(competitor){
-  return "#" + competitor.split(" ").join("").toLowerCase()
+  return "#" + competitor.split(" ").join("").toLowerCase();
 };
 
 var duelShow = function(event){
   $(".duelShow").on("click",function(event){
     event.preventDefault();
     $(".duelVideo").show();
-  })
+  });
 };
 
 var duelCreateSelector = function(){
@@ -43,4 +43,4 @@ var duelCreateSelector = function(){
 $(document).ready(function(){
   duelCreateSelector();
   duelShow();
-})
+});
