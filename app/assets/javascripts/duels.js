@@ -13,7 +13,15 @@ var formatCompetitor = function(competitor){
   return "#" + competitor.split(" ").join("").toLowerCase()
 };
 
-var duelSelector = function(){
+var duelShow = function(event){
+  $(".duelShow").on("click",function(event){
+    event.preventDefault();
+    debugger;
+    $(".duelVideo").show();
+  })
+};
+
+var duelCreateSelector = function(){
   $(".duelSelector").click(function(event){
     event.preventDefault();
     var duel_url = event["target"]["pathname"];
@@ -34,5 +42,6 @@ var duelSelector = function(){
 };
 
 $(document).ready(function(){
-  duelSelector();
+  duelCreateSelector();
+  duelShow();
 })

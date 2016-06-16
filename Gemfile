@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'jquery-turbolinks'
 gem 'active_model_serializers'
 gem 'pry-rails'
 gem "omniauth"

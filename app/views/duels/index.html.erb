@@ -1,5 +1,6 @@
-<h2><%="#{@user.username}'s Duels"%></h2>
-<%@duels.each do |duel|%>
-  <%="Competitor: #{duel.competitor}; Outcome: #{duel.outcome}"%><br>
-  <%=link_to("this duel",user_duel_path(@user,duel))%><br><br>
-<%end%>
+<h1><%="#{@user.username}'s Duels"%></h1>
+<ol>
+  <%@duels.each do |duel|%>
+    <li ><%=link_to("#{duel.competitor}",user_duel_path(@user,duel))%></li><br>
+  <%end%>
+</ol>
