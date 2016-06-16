@@ -6,8 +6,9 @@
       <li> <%= link_to "Update Your Information", edit_user_path(current_user) %> </li>
       <li> <%= link_to "View All Fans", users_path %> </li>
       <li> <%= link_to "Wall Of Fame", wall_of_fame_path %> </li>
+      <li> <%= link_to "Engage in New Duel", new_user_duel_path(current_user) %> </li>
       <li> <%= link_to "Logout", log_out_path(current_user), method: :delete %> </li>
-    <% else %> 
+    <% else %>
       <li> <%= link_to "Sign up", new_user_path %> </li>
       <li> <%= link_to "Sign in", log_in_path %> </li>
       <li> <%= link_to("Login with Twitter", 'https://learn-co-matthewpaulmcgowan.c9users.io/auth/twitter') %> </li>

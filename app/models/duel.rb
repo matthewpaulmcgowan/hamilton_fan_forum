@@ -1,6 +1,6 @@
 class Duel < ActiveRecord::Base
   belongs_to :user
-#<%=content_tag( :iframe, nil, src: "//www.youtube.com/embed/#{@duel.determine_video_link}")%>
+
   def determine_outcome
     @user = User.find(self.user_id)
     if self.competitor === "Alexander Hamilton"

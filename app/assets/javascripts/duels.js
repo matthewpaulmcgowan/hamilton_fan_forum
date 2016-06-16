@@ -16,7 +16,6 @@ var formatCompetitor = function(competitor){
 var duelShow = function(event){
   $(".duelShow").on("click",function(event){
     event.preventDefault();
-    debugger;
     $(".duelVideo").show();
   })
 };
