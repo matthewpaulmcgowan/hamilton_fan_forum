@@ -41,4 +41,5 @@ class Duel < ActiveRecord::Base
     end
     video_link
   end
+
 end

@@ -19,6 +19,7 @@ class DuelsController < ApplicationController
      @duel = @user.duels.build(competitor: params[:competitor])
      @duel.determine_outcome
      @duel.save
+     @user.update_dueling_ability(@duel.outcome)
      render json: @duel
    end
 end
