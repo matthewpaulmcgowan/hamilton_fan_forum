@@ -10,7 +10,6 @@ var indexMoreInfo = function(){
     });
   });
 };
-
 var User = function(id,username,authored_posts){
   this.id = id;
   this.username = username;

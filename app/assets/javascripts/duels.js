@@ -5,8 +5,8 @@ var Duel = function(outcome,competitor,id,userID){
   this.userID = userID;
 };
 
-Duel.prototype.formatDuel = function(outcome,competitor){
-  return "Outcome: " + outcome + "<br>" + "Competitor: " + competitor + "<br>";
+Duel.prototype.formatDuel = function(){
+  return "Outcome: " + this.outcome + "<br>" + "Competitor: " + this.competitor + "<br>";
 };
 
 var formatCompetitor = function(competitor){
@@ -32,7 +32,7 @@ var duelCreateSelector = function(){
        data: {competitor: duelCompetitor},
        success: function(response) {
          var duel = new Duel(response["outcome"],response["competitor"],response["id"],response["user_id"]);
-         var formattedDuel = duel.formatDuel(duel.outcome,duel.competitor);
+         var formattedDuel = duel.formatDuel();
          var formattedCompetitor = formatCompetitor(duelCompetitor);
          $(formattedCompetitor).html(formattedDuel);
        }
